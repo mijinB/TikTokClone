@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_clone_study/constants/gaps.dart';
 import 'package:tiktok_clone_study/constants/sizes.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class LogInScreen extends StatelessWidget {
+  const LogInScreen({super.key});
+
+  void onSignUpTap(BuildContext context) {
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
             children: [
               Gaps.v80,
               Text(
-                'Sign up for TikTok',
+                'Log in to TikTok',
                 style: TextStyle(
                   fontSize: Sizes.size24 + 2,
                   fontWeight: FontWeight.w800,
@@ -25,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Gaps.v20,
               Text(
-                'Create a profile, follow other accounts, make your own videos, and more.',
+                'Manage your account, check notifications, comment on videos, and more.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,
@@ -47,19 +51,22 @@ class SignUpScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Already have an account?',
+                'Don\'t have an account?',
                 style: TextStyle(
                   fontSize: Sizes.size16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Gaps.h5,
-              Text(
-                'Log in',
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: Sizes.size16,
-                  fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: () => onSignUpTap(context),
+                child: Text(
+                  'Sign up',
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: Sizes.size16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ],
