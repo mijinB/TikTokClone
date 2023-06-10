@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone_study/constants/gaps.dart';
 import 'package:tiktok_clone_study/constants/sizes.dart';
+import 'package:tiktok_clone_study/features/authentication/widgets/auth_button.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});
@@ -35,6 +37,16 @@ class LogInScreen extends StatelessWidget {
                   color: Colors.grey,
                   fontSize: Sizes.size16 + 1,
                 ),
+              ),
+              Gaps.v32,
+              AuthButton(
+                icon: FaIcon(FontAwesomeIcons.solidCircleUser),
+                text: 'Use email & password',
+              ),
+              Gaps.v14,
+              AuthButton(
+                icon: FaIcon(FontAwesomeIcons.apple),
+                text: 'Continue with apple',
               ),
             ],
           ),
