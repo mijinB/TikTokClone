@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
       body: const SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: Sizes.size20,
+            horizontal: Sizes.size36,
           ),
           child: Column(
             children: [
@@ -44,12 +44,14 @@ class SignUpScreen extends StatelessWidget {
               ),
               Gaps.v32,
               AuthButton(text: 'Use phone or email'),
+              Gaps.v14,
+              AuthButton(text: 'Continue with apple'),
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        elevation: 2,
+        elevation: Sizes.size2,
         color: Colors.grey.shade100,
         child: Padding(
           padding: const EdgeInsets.symmetric(
